@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alerta Digital MX — Prevención de fraudes digitales en México</title>
+<meta name="description" content="Información gratuita y verificada para identificar fraudes digitales en México, prevenirlos y saber qué hacer si ya fuiste víctima.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul:#0B3954;
+    --teal:#087E8B;
+    --rojo:#E63946;
+    --tinta:#1B2733;
+    --papel:#F7F5F1;
+    --linea:#D8D2C8;
+    --blanco:#FFFFFF;
+    --ancho:56rem;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none!important;transition:none!important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--papel);
+    color:var(--tinta);
+    font-family:"Source Serif 4",Georgia,serif;
+    font-size:1.0625rem;
+    line-height:1.65;
+    -webkit-text-size-adjust:100%;
+  }
+
+  h1,h2,h3,.fuente-display{
+    font-family:Archivo,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.15;
+    letter-spacing:-0.015em;
+    margin:0;
+  }
+
+  a{color:var(--teal);}
+  a:focus-visible,button:focus-visible{
+    outline:3px solid var(--teal);
+    outline-offset:3px;
+  }
+
+  .contenedor{
+    width:100%;
+    max-width:var(--ancho);
+    margin:0 auto;
+    padding:0 1.25rem;
+  }
+
+  /* ---------- Encabezado ---------- */
+  .encabezado{
+    background:var(--azul);
+    color:var(--blanco);
+    padding:1rem 0;
+  }
+  .encabezado .contenedor{
+    display:flex;
+    align-items:center;
+    gap:.85rem;
+  }
+  .encabezado img{
+    width:44px;height:44px;
+    object-fit:contain;
+    flex-shrink:0;
+  }
+  .marca{
+    font-family:Archivo,sans-serif;
+    font-weight:800;
+    font-size:1.15rem;
+    letter-spacing:-0.02em;
+  }
+  .marca span{
+    display:block;
+    font-family:"Source Serif 4",serif;
+    font-weight:400;
+    font-size:.8rem;
+    letter-spacing:0;
+    opacity:.8;
+  }
+
+  /* ---------- Portada ---------- */
+  .portada{
+    background:var(--azul);
+    color:var(--blanco);
+    padding:2rem 0 2.75rem;
+  }
+  .portada h1{
+    font-size:clamp(1.75rem,6vw,2.75rem);
+    font-weight:800;
+    max-width:26ch;
+  }
+  .portada p{
+    max-width:60ch;
+    margin:1rem 0 0;
+    font-size:1.0625rem;
+    opacity:.92;
+  }
+
+  .triage{
+    margin-top:1.75rem;
+    padding-top:1.5rem;
+    border-top:1px solid rgba(255,255,255,.25);
+  }
+  .triage p{
+    margin:0 0 .85rem;
+    font-family:Archivo,sans-serif;
+    font-weight:700;
+    font-size:.95rem;
+    opacity:1;
+  }
+  .saltos{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+    padding:0;margin:0;
+    list-style:none;
+  }
+  .saltos a{
+    display:block;
+    padding:.55rem .85rem;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:2px;
+    color:var(--blanco);
+    text-decoration:none;
+    font-family:Archivo,sans-serif;
+    font-weight:500;
+    font-size:.9rem;
+  }
+  .saltos a:hover{background:var(--teal);border-color:var(--teal);}
+
+  /* ---------- Cifra ---------- */
+  .cifra{
+    background:var(--blanco);
+    border-bottom:1px solid var(--linea);
+    padding:1.75rem 0;
+  }
+  .cifra strong{
+    font-family:Archivo,sans-serif;
+    font-weight:800;
+    font-size:clamp(1.6rem,5vw,2.25rem);
+    color:var(--rojo);
+    display:block;
+    line-height:1.1;
+  }
+  .cifra p{margin:.5rem 0 0;max-width:60ch;}
+  .cifra small{
+    display:block;
+    margin-top:.75rem;
+    font-size:.8rem;
+    color:#5C6672;
+  }
+
+  /* ---------- Secciones ---------- */
+  section{padding:2.75rem 0;border-bottom:1px solid var(--linea);}
+  section h2{
+    font-size:clamp(1.35rem,4.5vw,1.85rem);
+    font-weight:800;
+    color:var(--azul);
+    max-width:24ch;
+  }
+  .subtitulo{
+    margin:.6rem 0 0;
+    max-width:65ch;
+  }
+  h3{
+    font-size:1.05rem;
+    font-weight:700;
+    color:var(--azul);
+    margin:1.75rem 0 .6rem;
+  }
+
+  /* ---------- Mensaje de ejemplo ---------- */
+  .ejemplo{
+    margin:1.5rem 0 0;
+    background:var(--blanco);
+    border:1px solid var(--linea);
+    border-left:4px solid var(--rojo);
+    padding:1rem 1.1rem;
+    font-size:.98rem;
+  }
+  .ejemplo .etiqueta{
+    font-family:Archivo,sans-serif;
+    font-weight:700;
+    font-size:.78rem;
+    color:var(--rojo);
+    margin:0 0 .5rem;
+  }
+  .ejemplo blockquote{
+    margin:0;
+    font-style:italic;
+    color:#33414F;
+  }
+
+  ul.senales,ul.simple{
+    margin:.5rem 0 0;
+    padding-left:1.15rem;
+  }
+  ul.senales li,ul.simple li{margin-bottom:.5rem;}
+
+  .accion{
+    margin-top:1.25rem;
+    background:rgba(8,126,139,.08);
+    border:1px solid rgba(8,126,139,.3);
+    padding:.9rem 1.1rem;
+  }
+  .accion p{margin:0;}
+  .accion strong{color:var(--azul);}
+
+  /* ---------- Pasos numerados ---------- */
+  ol.pasos{
+    counter-reset:paso;
+    list-style:none;
+    padding:0;margin:1.25rem 0 0;
+  }
+  ol.pasos li{
+    counter-increment:paso;
+    position:relative;
+    padding-left:2.75rem;
+    margin-bottom:1.1rem;
+  }
+  ol.pasos li::before{
+    content:counter(paso);
+    position:absolute;left:0;top:.1rem;
+    width:1.9rem;height:1.9rem;
+    background:var(--azul);
+    color:var(--blanco);
+    font-family:Archivo,sans-serif;
+    font-weight:700;
+    font-size:.95rem;
+    display:flex;align-items:center;justify-content:center;
+  }
+  ol.pasos strong{display:block;font-family:Archivo,sans-serif;color:var(--azul);}
+
+  /* ---------- Denuncia ---------- */
+  .institucion{
+    background:var(--blanco);
+    border:1px solid var(--linea);
+    padding:1.1rem 1.2rem;
+    margin-top:1rem;
+  }
+  .institucion h3{margin-top:0;}
+  .institucion p{margin:.35rem 0;}
+  .institucion .dato{
+    font-family:Archivo,sans-serif;
+    font-weight:700;
+    color:var(--tinta);
+  }
+
+  /* ---------- Descarga ---------- */
+  #manual{background:var(--azul);color:var(--blanco);border-bottom:none;}
+  #manual h2{color:var(--blanco);}
+  #manual .subtitulo{opacity:.92;}
+  .boton{
+    display:inline-block;
+    margin-top:1.5rem;
+    padding:.85rem 1.5rem;
+    background:var(--rojo);
+    color:var(--blanco);
+    text-decoration:none;
+    font-family:Archivo,sans-serif;
+    font-weight:700;
+  }
+  .boton:hover{background:#c92c39;}
+
+  /* ---------- Pie ---------- */
+  footer{
+    background:var(--tinta);
+    color:#C8D0D8;
+    padding:2.25rem 0;
+    font-size:.9rem;
+  }
+  footer h3{color:var(--blanco);margin-top:0;}
+  footer a{color:#7FD3DC;}
+  footer ul{padding-left:1.15rem;margin:.5rem 0 1.25rem;}
+  .creditos{
+    margin-top:1.5rem;
+    padding-top:1.25rem;
+    border-top:1px solid rgba(255,255,255,.15);
+  }
+</style>
+</head>
+<body>
+
+<header class="encabezado">
+  <div class="contenedor">
+    <img src="logo.png" alt="Logotipo de Alerta Digital MX">
+    <div class="marca">
+      Alerta Digital MX
+      <span>Prevención de fraudes digitales</span>
+    </div>
+  </div>
+</header>
+
+<div class="portada">
+  <div class="contenedor">
+    <h1>¿Te llegó un mensaje raro o te llamaron del banco?</h1>
+    <p>Aquí encuentras, en lenguaje simple, cómo se ven los fraudes digitales más comunes en México, cómo reconocerlos a tiempo y qué hacer si ya caíste. Toda la información proviene de fuentes oficiales.</p>
+
+    <div class="triage">
+      <p>Ve directo a lo que te pasó:</p>
+      <ul class="saltos">
+        <li><a href="#phishing">Correo o mensaje falso</a></li>
+        <li><a href="#vishing">Llamada telefónica</a></li>
+        <li><a href="#smishing">SMS o WhatsApp</a></li>
+        <li><a href="#secuestro">Secuestro virtual</a></li>
+        <li><a href="#suplantacion">Suplantación de identidad</a></li>
+        <li><a href="#ya-cai">Ya caí, ¿qué hago?</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="cifra">
+  <div class="contenedor">
+    <strong>43,871 reclamaciones</strong>
+    <p>Es el número de quejas por posible fraude que recibió la CONDUSEF entre enero y junio de 2026: 16.7% más que en el mismo periodo del año anterior. Cuatro de cada diez reclamaciones que recibe la institución son por fraude.</p>
+    <small>Fuente: Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF).</small>
+  </div>
+</div>
+
+<section id="phishing">
+  <div class="contenedor">
+    <h2>Phishing: el correo o mensaje que finge ser tu banco</h2>
+    <p class="subtitulo">Un mensaje que imita a tu banco, una tienda o una dependencia de gobierno para que entregues tus datos sin darte cuenta.</p>
+
+    <div class="ejemplo">
+      <p class="etiqueta">Así se ve</p>
+      <blockquote>«Estimado cliente: detectamos actividad inusual en su cuenta. Por seguridad, su acceso será bloqueado en las próximas 24 horas. Valide su información aquí: bancoseguro-mx.net/verificar»</blockquote>
+    </div>
+
+    <h3>Señales de alerta</h3>
+    <ul class="senales">
+      <li>Te presionan con un plazo corto para que actúes sin pensar.</li>
+      <li>El remitente se parece al oficial pero no es idéntico: le sobra una letra, cambia el dominio o usa un correo genérico.</li>
+      <li>Te piden contraseña, NIP, número completo de tarjeta o código de verificación.</li>
+      <li>El enlace no lleva al sitio oficial del banco.</li>
+      <li>Hay errores de ortografía, acentos faltantes o un formato descuidado.</li>
+    </ul>
+
+    <div class="accion">
+      <p><strong>Qué hacer:</strong> no des clic en el enlace. Cierra el mensaje, entra a la app o al sitio oficial escribiendo tú la dirección, y verifica ahí si existe alguna alerta real. Ningún banco pide contraseñas ni códigos por correo o mensaje.</p>
+    </div>
+  </div>
+</section>
+
+<section id="vishing">
+  <div class="contenedor">
+    <h2>Vishing: el fraude por llamada telefónica</h2>
+    <p class="subtitulo">Alguien llama diciendo ser ejecutivo de tu banco y usa la urgencia para que no te detengas a comprobar nada.</p>
+
+    <div class="ejemplo">
+      <p class="etiqueta">Así se ve</p>
+      <blockquote>«Le hablamos del departamento de seguridad de su banco. Detectamos un cargo no reconocido de $12,400. Para cancelarlo necesitamos que transfiera su saldo a una cuenta segura mientras resolvemos el caso.»</blockquote>
+    </div>
+
+    <h3>Señales de alerta</h3>
+    <ul class="senales">
+      <li>Te piden mover tu dinero a una «cuenta segura» o «cuenta espejo». Los bancos nunca hacen eso.</li>
+      <li>Insisten en que no cuelgues ni consultes con nadie.</li>
+      <li>Te dictan pasos dentro de tu app mientras siguen en la línea.</li>
+      <li>Te piden un código que acabas de recibir por SMS.</li>
+      <li>Ya conocen algunos de tus datos, lo cual usan para ganarse tu confianza.</li>
+    </ul>
+
+    <div class="accion">
+      <p><strong>Qué hacer:</strong> cuelga. Marca tú al número que aparece al reverso de tu tarjeta o dentro de la app oficial y pregunta directamente. Si el cargo era real, ahí te lo confirman.</p>
+    </div>
+  </div>
+</section>
+
+<section id="smishing">
+  <div class="contenedor">
+    <h2>Smishing: el fraude por SMS o WhatsApp</h2>
+    <p class="subtitulo">Es la misma técnica del phishing, pero llega por mensaje de texto o mensajería instantánea, donde los enlaces son más difíciles de revisar.</p>
+
+    <div class="ejemplo">
+      <p class="etiqueta">Así se ve</p>
+      <blockquote>«Tu paquete no pudo ser entregado por falta de datos. Actualiza tu dirección y paga $28 de reenvío: paqueteria-envios.info/rastreo»</blockquote>
+    </div>
+
+    <h3>Señales de alerta</h3>
+    <ul class="senales">
+      <li>Te avisan de un paquete que no esperabas, un premio o una deuda desconocida.</li>
+      <li>El cobro es pequeño, para que no le des importancia y entregues los datos de tu tarjeta.</li>
+      <li>El enlace está acortado o usa un dominio que no corresponde a la empresa.</li>
+      <li>Llega de un número desconocido o de una cuenta de WhatsApp sin verificar.</li>
+      <li>Un contacto conocido te pide dinero urgente con un tono distinto al suyo.</li>
+    </ul>
+
+    <div class="accion">
+      <p><strong>Qué hacer:</strong> no abras el enlace. Si dice ser una paquetería, rastrea el envío en el sitio oficial de la empresa. Si es un conocido pidiendo dinero, márcale por teléfono antes de mandar nada.</p>
+    </div>
+  </div>
+</section>
+
+<section id="secuestro">
+  <div class="contenedor">
+    <h2>Secuestro virtual: la llamada que finge una emergencia</h2>
+    <p class="subtitulo">No hay ningún secuestro. El delincuente provoca pánico para conseguir dinero antes de que la familia logre comunicarse con la persona supuestamente retenida.</p>
+
+    <div class="ejemplo">
+      <p class="etiqueta">Así se ve</p>
+      <blockquote>«Tenemos a tu hijo. No cuelgues ni marques a nadie o le va a ir mal. Necesitamos un depósito ahora mismo y lo soltamos.»</blockquote>
+    </div>
+
+    <h3>Señales de alerta</h3>
+    <ul class="senales">
+      <li>Exigen que no cuelgues bajo ninguna circunstancia.</li>
+      <li>No te dejan hablar con la persona, o solo escuchas gritos sin poder identificarla.</li>
+      <li>Piden un depósito o transferencia inmediata, casi siempre por un monto que sí puedes pagar.</li>
+      <li>No tienen datos concretos y verificables de la persona: intentan que tú los aportes.</li>
+      <li>La llamada llega de un número desconocido o de otra entidad del país.</li>
+    </ul>
+
+    <div class="accion">
+      <p><strong>Qué hacer:</strong> mantén la calma y gana tiempo. Desde otro teléfono, pide a alguien que localice a la persona. No des nombres ni datos: si preguntan «¿quién habla?», no respondas con un nombre. No transfieras dinero. Denuncia al 089 (denuncia anónima) o al 911 si hay riesgo inmediato.</p>
+    </div>
+  </div>
+</section>
+
+<section id="suplantacion">
+  <div class="contenedor">
+    <h2>Suplantación de identidad: cuando usan tus datos</h2>
+    <p class="subtitulo">Alguien obtiene tu información personal y la usa para abrir cuentas, contratar créditos o hacerse pasar por ti frente a otras personas.</p>
+
+    <div class="ejemplo">
+      <p class="etiqueta">Así se ve</p>
+      <blockquote>Recibes el estado de cuenta de una tarjeta que nunca solicitaste, o un familiar te avisa que «tú» le escribiste desde otro perfil pidiéndole dinero.</blockquote>
+    </div>
+
+    <h3>Señales de alerta</h3>
+    <ul class="senales">
+      <li>Te llegan cobros, contratos o notificaciones de productos que no contrataste.</li>
+      <li>Tu solicitud de crédito es rechazada sin motivo aparente.</li>
+      <li>Conocidos reciben mensajes tuyos desde cuentas que no son tuyas.</li>
+      <li>Dejas de recibir señal en el celular sin explicación, lo que puede indicar un cambio de SIM no autorizado.</li>
+      <li>Te llegan códigos de verificación que tú no pediste.</li>
+    </ul>
+
+    <div class="accion">
+      <p><strong>Qué hacer:</strong> solicita tu reporte de crédito para revisar si hay productos a tu nombre, reporta a las instituciones involucradas y presenta la denuncia. Si hubo uso indebido de tus datos personales, el INAI es la instancia correspondiente.</p>
+    </div>
+  </div>
+</section>
+
+<section id="prevencion">
+  <div class="contenedor">
+    <h2>Guía de prevención: siete reglas que sirven para todos los casos</h2>
+    <p class="subtitulo">Los fraudes cambian de forma, pero explotan siempre lo mismo: urgencia, miedo y confianza. Estas reglas aplican sin importar por dónde llegue el intento.</p>
+
+    <ul class="simple">
+      <li><strong>La urgencia es la señal.</strong> Cualquier mensaje que te apure a actuar en minutos merece desconfianza automática.</li>
+      <li><strong>Nunca compartas contraseñas, NIP ni códigos de verificación.</strong> Ninguna institución legítima te los va a pedir.</li>
+      <li><strong>Verifica por el canal oficial, no por el que te contactaron.</strong> Cuelga y marca tú; cierra el correo y entra a la app.</li>
+      <li><strong>Activa la verificación en dos pasos</strong> en tu correo, tu banca y tus redes sociales.</li>
+      <li><strong>Revisa tus estados de cuenta</strong> con regularidad, incluso los cargos pequeños.</li>
+      <li><strong>No publiques datos personales</strong> como tu dirección, tu rutina o fotos de documentos oficiales.</li>
+      <li><strong>Habla del tema en tu familia.</strong> Una de cada tres víctimas de fraude en banca digital es mayor de 60 años; avisar a tiempo previene más que cualquier candado.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="ya-cai">
+  <div class="contenedor">
+    <h2>Si ya caíste: qué hacer en las primeras horas</h2>
+    <p class="subtitulo">La velocidad importa. Mientras más rápido actúes, mayor es la posibilidad de frenar el daño. Sigue estos pasos en orden.</p>
+
+    <ol class="pasos">
+      <li><strong>Contacta a tu banco de inmediato</strong>Reporta el movimiento, pide el bloqueo de la tarjeta o la cuenta y solicita el número de reporte. Anótalo: lo vas a necesitar en cada trámite posterior.</li>
+      <li><strong>Cambia tus contraseñas</strong>Empieza por tu correo, porque desde ahí se recupera todo lo demás. Activa la verificación en dos pasos donde puedas.</li>
+      <li><strong>Reúne las pruebas</strong>Guarda capturas de los mensajes, números de teléfono, comprobantes de transferencia y cualquier correo relacionado. Sin evidencia, la reclamación avanza mucho más lento.</li>
+      <li><strong>Presenta la reclamación ante la institución financiera</strong>Hazlo por escrito y conserva el acuse. Tienes derecho a una respuesta formal.</li>
+      <li><strong>Denuncia ante la autoridad correspondiente</strong>Según el caso: CONDUSEF si involucra a un banco, la Policía Cibernética si hubo un delito digital, el INAI si usaron tus datos personales.</li>
+      <li><strong>Avisa a tus contactos</strong>Si suplantaron tu identidad, diles por otro medio que no respondan a mensajes que lleguen a tu nombre.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="denunciar">
+  <div class="contenedor">
+    <h2>Dónde denunciar</h2>
+    <p class="subtitulo">Cada institución atiende un tipo distinto de caso. Verifica siempre los datos de contacto en el sitio oficial antes de comunicarte.</p>
+
+    <div class="institucion">
+      <h3>CONDUSEF</h3>
+      <p>Para cargos no reconocidos, fraudes bancarios y cualquier problema con una institución financiera. Puede orientarte y acompañar tu reclamación.</p>
+      <p class="dato">condusef.gob.mx</p>
+    </div>
+
+    <div class="institucion">
+      <h3>Policía Cibernética — Guardia Nacional</h3>
+      <p>Para delitos cometidos por medios digitales: extorsión en línea, secuestro virtual, suplantación en redes sociales, sitios y perfiles fraudulentos.</p>
+      <p class="dato">gob.mx/gncertmx</p>
+    </div>
+
+    <div class="institucion">
+      <h3>INAI</h3>
+      <p>Cuando el problema es el uso indebido de tus datos personales por parte de una empresa o institución.</p>
+      <p class="dato">inai.org.mx</p>
+    </div>
+  </div>
+</section>
+
+<section id="manual">
+  <div class="contenedor">
+    <h2>Descarga la guía completa</h2>
+    <p class="subtitulo">Un documento en PDF con los pasos a seguir si ya fuiste víctima de un fraude digital, los datos de contacto de cada institución y plantillas de denuncia que puedes llenar y presentar.</p>
+    <a class="boton" href="manual-alerta-digital-mx.pdf" download>Descargar la guía en PDF</a>
+  </div>
+</section>
+
+<footer>
+  <div class="contenedor">
+    <h3>Sobre este proyecto</h3>
+    <p>Alerta Digital MX es un proyecto de servicio social desarrollado dentro del programa Voluntarios Digitales por la Comunidad de CEFODEH. Su objetivo es reunir en un solo lugar información verificada sobre fraudes digitales y ponerla en lenguaje que cualquier persona pueda usar.</p>
+
+    <h3>Fuentes consultadas</h3>
+    <ul>
+      <li>Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF)</li>
+      <li>Policía Cibernética, Guardia Nacional</li>
+      <li>Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales (INAI)</li>
+    </ul>
+
+    <p>Este sitio tiene fines informativos y no sustituye la asesoría de las instituciones oficiales ni de un abogado.</p>
+
+    <div class="creditos">
+      <p>Carl Thomas Peine Vivas · Ingeniería Mecatrónica · Universidad Tecnológica de México, campus Toluca</p>
+      <p>Proyecto de servicio social · CEFODEH · 2026</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
